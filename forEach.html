@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // c. Print the following details name, capital, flag using forEach function
+
+        var details = new XMLHttpRequest();
+        details.open('GET','https://restcountries.com/v2/all',true);
+        details.send();
+        details.onload = function (){
+            var data = JSON.parse(details.response);
+            data.forEach((element)=>{
+                console.log("Country Name =>",element.name,",capital=>",element.capital,",flag=>",element.flag);
+            })
+        }
+    </script>
+</body>
+</html>
